@@ -1,26 +1,28 @@
-# Step 4
+# Step 4: Build and run the docker image
 
-What about this port we created?
+1. build
+An image is like a blue print of the application (the container)
 
-We need to make it available from to the outside world!
+`docker build . -t rusty-server`
 
-You need to stop your running container with
+*explain what build does*
 
-`docker stop <Container name>`
+`-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
 
-If you run `docker ps -a`, the container should have been removed, thanks to the flag `--rm`.
+Check if the image has been created:
 
-Re-run the previous command but this time exposing the port. Choose a port, we chose `7777`. `7878` is the port we chose for the Rust server in the Rust code.
+`docker image ls`{{execute}}, you should see it.
 
-`docker run -d -it -p 7777:7878 --rm --name servo1 servo`
+2. run
 
-`docker ps -a` will show you:
+Run the docker image:
+`docker run -d -it --rm --name rusty-server1 rusty-server`
 
-```console
-CONTAINER ID   IMAGE     COMMAND           CREATED          STATUS          PORTS                                       NAMES
-5be3e4655dd5   servo     "server_devops"   31 seconds ago   Up 30 seconds   0.0.0.0:7777->7878/tcp, :::7777->7878/tcp   servo1
-```
-Meaning that requests to 7777 will be redirected to 7878.
+The flags are:
+`-d` detached mode, it will free your terminal after use. Like `&` in the background.
+`-it` Interractive mode
+`--name` the syntax is : `--name <Container name> <Image>`
 
-This is not working, why??
+You should see the container with `docker ps -a`
+
 

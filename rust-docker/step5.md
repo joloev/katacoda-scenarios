@@ -1,30 +1,30 @@
 # Fix the Rust server to listen to the world
 
-The Rust server is listening on localhost. But the localhost of the Container is not your localhost.
+## A first try
 
-What is happening is something like this:
+What about this port we created? We need to make it available from to the outside world!
 
-[ you @ 127.0.0.1 port 7878 ] ---> docker fuckery ---> [ you + container @ 172.17.0.2 port 7878 ]  ---> more docker fuckery ---> [ you + container @ fake 127.0.0.1 port 7777 ]
+You need to stop your running container with
 
-We are listening at an address that does not exist.
+`docker stop <Container name>`
 
-To fix this, go to the Rust code.
+If you run `docker ps -a`, the container should have been removed, thanks to the flag `--rm`.
 
-`nano src/main.rs`{{execute}}
+Re-run the previous command but this time exposing the port. Choose a port, we chose `7777`. `7878` is the port we chose for the Rust server in the Rust code.
 
-and change the line:
+(put rust code here?)
 
-```git
-- let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-+ let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
+`docker run -d -it -p 7777:7878 --rm --name rusty-server1 rusty-server`{{execute}}
+
+`docker ps -a` will show you:
+
+```console
+CONTAINER ID   IMAGE     COMMAND           CREATED          STATUS          PORTS                                       NAMES
+5be3e4655dd5   servo     "server_devops"   31 seconds ago   Up 30 seconds   0.0.0.0:7777->7878/tcp, :::7777->7878/tcp   servo1
 ```
-Save the file.
-The server will now listen to any computer, on port 7878.
+Meaning that requests to 7777 will be redirected to 7878.
 
-Rebuild the file as per step3.
+This is not working, why??
 
-Run the file as per step 4. (if the old server is running, use `docker stop <Container name>`)
+See that on next page.
 
-Go to `localhost:7777` and you should see:
-
-![](./assets/easter_bunny.png)
