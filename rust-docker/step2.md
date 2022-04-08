@@ -1,26 +1,31 @@
-# Step 2
+# Step 2: Set up Docker image
 
-The subject of this tutorial is DevOps and containairization. 
-We will put this Rust server in a container and made it available online.
+- explain what a docker image is: image == blueprint, container == made from blueprint
 
-⚠️ The server will not be put on `Docker hub`!
-
-Make a Docker file
-
-touch Dockerfile{{execute}}
+1. Go to Docker hub
 
 We will be running a Rust image, so go to Docker hub and check the Rust official image: https://hub.docker.com/_/rust.
 
-** a note on rust:latest**
-You usually don't want to do that but Rust is backward compatible.
-Populate the Dockerfile:
+`docker pull rust`{{execute}}
 
-`FROM`, aka the Docker image.
 
-`WORKDIR` not necessary. The system assumes that we are in the current folder. This is the standard idiom for basically every CLI tool.
+Check the image arrived:
 
-`RUN` cargo install --path ., as per the Docker hub documentation
+`docker image ls`{{execute}}
 
-`CMD` ["server_devops"]: this will comme as a command line argument.
+At time of creation
 
-`EXPOSE 7878`: the server will listen on port `7878`
+```console
+REPOSITORY               TAG       IMAGE ID       CREATED             SIZE
+rust                     latest    5593c6ce4c4e   18 hours ago        1.3GB
+
+```
+
+
+To list your images:
+
+`docker images -a`
+
+To remove an image:
+
+`docker image rm [image name or image id]`

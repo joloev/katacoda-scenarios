@@ -1,21 +1,41 @@
-# Step 3
+# Step 3: Create a Docker container
 
-Build the docker image. An image is like a blue print of the application (the container)
-
-`docker build . -t rusty-server`
-
-`-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
-
-Check if the image has been created:
-`docker image ls`, you should see it.
+- explain what a docker container is
 
 
-Run the docker image:
-`docker run -d -it --rm --name rusty-server1 rusty-server`
+1. Make a Dockerfile
 
-The flags are:
-`-d` detached mode, it will free your terminal after use. Like `&` in the background.
-`-it` Interractive mode
-`--name` the syntax is : `--name <Container name> <Image>`
+`touch Dockerfile`{{execute}}
+`nano Dockerfile`{{execute}}
+Or VScode, or VIM
 
-You should see the container with `docker ps -a`
+
+2. Populate the Dockerfile:
+Reference: https://hub.docker.com/_/rust
+
+`FROM`, aka the Docker image.
+**A note on rust:latest**: You usually don't want to do that but Rust is backward compatible.
+
+`WORKDIR` is NOT necessary. The system assumes that we are in the current folder. This is the standard idiom for basically every CLI tool.
+
+`RUN` cargo install --path ., as per the Docker hub documentation
+
+`CMD` ["server_devops"]: this will comme as a command line argument.
+
+`EXPOSE 7878`: the server will listen on port `7878`
+
+
+SOLUTION:
+
+```
+FROM rust:latest
+
+COPY . .
+
+RUN cargo install --path .
+
+CMD ["server_devops"]
+
+EXPOSE 7878
+```{{copy}}
+

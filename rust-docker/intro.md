@@ -19,3 +19,6 @@ Complete code for the rust server set up in this tutorial can be found at this [
 ## Intended learning outcomes
 - Learn how to set up a Docker container and a few basic Docker commands neccessary
 - Learn how to deploy a rust server in using the Docker container
+- Making that server accessible from another machine
+
+
