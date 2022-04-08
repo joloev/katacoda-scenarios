@@ -1,6 +1,6 @@
 {
-  "title": "Run a Rust server using Docker",
-  "description": "Shows how to set up Docker container running a rust server",
+  "title": "Docker container running rust server",
+  "description": "Learn how to set up Docker container running a rust server",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
