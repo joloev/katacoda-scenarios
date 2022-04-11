@@ -4,9 +4,9 @@ As mentioned earlier docker container is based on a Docker image, which sets the
 
 A docker container are a virtualized environment which allows for an application to be isolated from other applications yet using the same host system.
 
-1. Make a Dockerfile
+Create a new Dockerfile in correct folder by typing
 `cd DD2482-executable-tutorial/server_devops`{{execute}}
-Create a new Dockerfile `touch Dockerfile`{{execute}} make sure the naming is eactly as written here.
+ `touch Dockerfile`{{execute}} make sure the naming is eactly as written here.
 
 Open it in a text editor like `vim Dockerfile`{{execute}}
 Change to insert mode `i`{{execute}}
