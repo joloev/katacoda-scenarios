@@ -1,31 +1,31 @@
 # Step 2: Set up Docker image
 
-- explain what a docker image is: image == blueprint, container == made from blueprint
+## What is a Docker image?
+Now when we have a brief understanding of the rust server itself and the code used for it is time to start building the Docker container. Docker is an image based tool. This means one can create a sort of template for how a Docker container should look like. This teplate can then be reused when initialising new docker container. 
 
-1. Go to Docker hub
+If you are familiar with object oriented programming you can compare Docker image being a class and a docker container an instance of a class.
 
-We will be running a Rust image, so go to Docker hub and check the Rust official image: https://hub.docker.com/_/rust.
+There are multiple predefined Docker images you can download from [Docker Hub](https://hub.docker.com/)
 
-`docker pull rust`{{execute}}
+If you have installed Docker you can download the predifned Docker images in the terminal using the docker command, see example below.
 
+## Download a premade docker image
 
-Check the image arrived:
+In order to run the rust server inside the Docker container, we are about to set up, we need animage which allows us to run rust programs inside the Docker container. Luckily there is already a predefined we can download.
 
+Run `docker pull rust`{{execute}}
+
+Check that the image has been succesfully downloaded by running 
 `docker image ls`{{execute}}
 
-At time of creation
+You should now see the following information in the terminal:
 
 ```console
 REPOSITORY               TAG       IMAGE ID       CREATED             SIZE
-rust                     latest    5593c6ce4c4e   18 hours ago        1.3GB
+rust                     latest    5593c6ce4c4e   <time>             1.3GB
 
 ```
 
+To view other images run `docker images -a`
 
-To list your images:
-
-`docker images -a`
-
-To remove an image:
-
-`docker image rm [image name or image id]`
+To remove an image run `docker image rm [image name or image id]`
