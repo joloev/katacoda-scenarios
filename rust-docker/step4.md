@@ -1,8 +1,6 @@
-# Create a Docker container
+# Create the Dockerfile
 
-As mentioned earlier docker container is based on a Docker image, which sets the structure and requirments of the container. 
-
-A docker container are a virtualized environment which allows for an application to be isolated from other applications yet using the same host system.
+Before instantiating the container we need to create the Dockerfile which defines which base image should be used and what other commands the docker container should run and where it should run it these commands.
 
 Create a new Dockerfile in correct folder by typing
 `cd DD2482-executable-tutorial/server_devops`{{execute}}
@@ -10,7 +8,7 @@ Create a new Dockerfile in correct folder by typing
 
 Open it in a text editor like `vim Dockerfile`{{execute}}
 Change to insert mode `i`{{execute}}
-Add the following in the file
+Add the following in the file:
 
 `FROM rust:latest`{{execute}}
 
@@ -22,17 +20,17 @@ Add the following in the file
 
 `EXPOSE 7878`{{execute}}
 
-Here is an explanation of what a typical Dockerfile requires:
 
-`FROM`, aka the Docker image.
-**A note on rust:latest**: You usually don't want to use tag latest but Rust is backward compatible.
+Each line of the Dockerfile is described below.
 
-`WORKDIR` is NOT necessary. The system assumes that we are in the current folder. This is the standard idiom for basically every CLI tool.
+`FROM`, aka the Docker image. This is the parent or base image which our customized image will be built upon.
+A note on **rust:latest**: You usually don't want to use the tag *latest*, but Rust is backward compatible.
+
+`WORKDIR` is NOT necessary. The system assumes that we are in the current folder.  This sets the working directory for the image where the following commands like RUN, CMD, etc.. will be executed.
 
 `RUN` cargo install --path ., as per the Docker hub documentation
 
-`CMD` ["server_devops"]: this will come as a command line argument.
+`CMD` ["server_devops"]: specifies that the command server_devops should be executed when running a container. 
 
-`EXPOSE 7878`: means server will listen on port `7878`
-
+`EXPOSE 7878`: means server will listen on port `7878`.
 

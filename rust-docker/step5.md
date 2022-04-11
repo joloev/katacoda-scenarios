@@ -1,28 +1,23 @@
 # Step 4: Build and run the docker image
 
-1. build
-An image is like a blue print of the application (the container)
+Now lets build the customized image:
 
-`docker build . -t rusty-server`
+`docker build . -t rusty-server`{{execute}}
 
-*explain what build does*
+What happens is a new image, based on Dockerfile created we be built.
 
 `-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
 
-Check if the image has been created:
+Check if the image has been created by running `docker images`{{execute}}. Do you see it?
 
-`docker image ls`{{execute}}, you should see it.
+Now create a container based by running the customized docker image.
 
-2. run
+`docker run -d -it --rm --name rusty-server1 rusty-server`{{execute}}
 
-Run the docker image:
-`docker run -d -it --rm --name rusty-server1 rusty-server`
-
-The flags are:
 `-d` detached mode, it will free your terminal after use. Like `&` in the background.
 `-it` Interractive mode
 `--name` the syntax is : `--name <Container name> <Image>`
 
-You should see the container with `docker ps -a`
+Run `docker ps -a`{{execute}} to see that the container is up and running.
 
 
