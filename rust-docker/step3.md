@@ -13,9 +13,13 @@ Change to insert mode `i`{{execute}}
 Add the following in the file
 
 `FROM rust:latest`{{execute}}
+
 `COPY . .`{{execute}}
+
 `RUN cargo install --path .`{{execute}}
+
 `CMD ["server_devops"]`{{execute}}
+
 `EXPOSE 7878`{{execute}}
 
 Here is an explanation of what a typical Dockerfile requires:
