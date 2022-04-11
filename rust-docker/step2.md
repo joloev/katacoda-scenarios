@@ -14,9 +14,11 @@ If you have installed Docker you can download the predifned Docker images in the
 In order to run the rust server inside the Docker container, we are about to set up, we need animage which allows us to run rust programs inside the Docker container. Luckily there is already a predefined we can download.
 
 Run `docker pull rust`{{execute}}
+This may take a a few minutes.
 
 Check that the image has been succesfully downloaded by running 
-`docker image ls`{{execute}}
+`docker images`{{execute}}
+This command will list all local images.
 
 You should now see the following information in the terminal:
 
@@ -25,7 +27,5 @@ REPOSITORY               TAG       IMAGE ID       CREATED             SIZE
 rust                     latest    5593c6ce4c4e   <time>             1.3GB
 
 ```
-
-To view other images run `docker images -a`
 
 To remove an image run `docker image rm [image name or image id]`
