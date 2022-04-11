@@ -1,4 +1,4 @@
-# Step 1
+# Download the rust server
 
 A Rust server has been created beforehand, as this tutorial won't cover how to build the server itself.
 In order to make it run inside the Docker container we need to retrieve it.
