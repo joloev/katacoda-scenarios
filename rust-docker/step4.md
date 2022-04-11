@@ -1,28 +1,38 @@
-# Step 4: Build and run the docker image
+# Create a Docker container
 
-1. build
-An image is like a blue print of the application (the container)
+As mentioned earlier docker container is based on a Docker image, which sets the structure and requirments of the container. 
 
-`docker build . -t rusty-server`
+A docker container are a virtualized environment which allows for an application to be isolated from other applications yet using the same host system.
 
-*explain what build does*
+Create a new Dockerfile in correct folder by typing
+`cd DD2482-executable-tutorial/server_devops`{{execute}}
+ `touch Dockerfile`{{execute}} make sure the naming is eactly as written here.
 
-`-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
+Open it in a text editor like `vim Dockerfile`{{execute}}
+Change to insert mode `i`{{execute}}
+Add the following in the file
 
-Check if the image has been created:
+`FROM rust:latest`{{execute}}
 
-`docker image ls`{{execute}}, you should see it.
+`COPY . .`{{execute}}
 
-2. run
+`RUN cargo install --path .`{{execute}}
 
-Run the docker image:
-`docker run -d -it --rm --name rusty-server1 rusty-server`
+`CMD ["server_devops"]`{{execute}}
 
-The flags are:
-`-d` detached mode, it will free your terminal after use. Like `&` in the background.
-`-it` Interractive mode
-`--name` the syntax is : `--name <Container name> <Image>`
+`EXPOSE 7878`{{execute}}
 
-You should see the container with `docker ps -a`
+Here is an explanation of what a typical Dockerfile requires:
+
+`FROM`, aka the Docker image.
+**A note on rust:latest**: You usually don't want to use tag latest but Rust is backward compatible.
+
+`WORKDIR` is NOT necessary. The system assumes that we are in the current folder. This is the standard idiom for basically every CLI tool.
+
+`RUN` cargo install --path ., as per the Docker hub documentation
+
+`CMD` ["server_devops"]: this will come as a command line argument.
+
+`EXPOSE 7878`: means server will listen on port `7878`
 
 

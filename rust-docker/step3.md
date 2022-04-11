@@ -1,38 +1,31 @@
-# Create a Docker container
+# Set up Docker image
 
-As mentioned earlier docker container is based on a Docker image, which sets the structure and requirments of the container. 
+## What is a Docker image?
+Now when we have a brief understanding of the rust server itself and the code used for it is time to start building the Docker container. Docker is an image based tool. This means one can create a sort of template for how a Docker container should look like. This teplate can then be reused when initialising new docker container. 
 
-A docker container are a virtualized environment which allows for an application to be isolated from other applications yet using the same host system.
+If you are familiar with object oriented programming you can compare Docker image being a class and a docker container an instance of a class.
 
-Create a new Dockerfile in correct folder by typing
-`cd DD2482-executable-tutorial/server_devops`{{execute}}
- `touch Dockerfile`{{execute}} make sure the naming is eactly as written here.
+There are multiple predefined Docker images you can download from [Docker Hub](https://hub.docker.com/)
 
-Open it in a text editor like `vim Dockerfile`{{execute}}
-Change to insert mode `i`{{execute}}
-Add the following in the file
+If you have installed Docker you can download the predifned Docker images in the terminal using the docker command, see example below.
 
-`FROM rust:latest`{{execute}}
+## Download a premade docker image
 
-`COPY . .`{{execute}}
+In order to run the rust server inside the Docker container, we are about to set up, we need animage which allows us to run rust programs inside the Docker container. Luckily there is already a predefined we can download.
 
-`RUN cargo install --path .`{{execute}}
+Run `docker pull rust`{{execute}}
+This may take a a few minutes.
 
-`CMD ["server_devops"]`{{execute}}
+Check that the image has been succesfully downloaded by running 
+`docker images`{{execute}}
+This command will list all local images.
 
-`EXPOSE 7878`{{execute}}
+You should now see the following information in the terminal:
 
-Here is an explanation of what a typical Dockerfile requires:
+```console
+REPOSITORY               TAG       IMAGE ID       CREATED             SIZE
+rust                     latest    5593c6ce4c4e   <time>             1.3GB
 
-`FROM`, aka the Docker image.
-**A note on rust:latest**: You usually don't want to use tag latest but Rust is backward compatible.
+```
 
-`WORKDIR` is NOT necessary. The system assumes that we are in the current folder. This is the standard idiom for basically every CLI tool.
-
-`RUN` cargo install --path ., as per the Docker hub documentation
-
-`CMD` ["server_devops"]: this will come as a command line argument.
-
-`EXPOSE 7878`: means server will listen on port `7878`
-
-
+To remove an image run `docker image rm [image name or image id]`

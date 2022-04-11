@@ -1,26 +1,24 @@
-# Download the rust server
+# Set up Docker container running a rust server
 
-A Rust server has been created beforehand, as this tutorial won't cover how to build the server itself.
-In order to make it run inside the Docker container we need to retrieve it.
-<br/><br/>
+## Why using Docker?
 
-## Clone the server
+Docker is an open source containerization platform. Docker uses a linux kernel and takes advantage of several feature that comes with it such as namespaces and control groups.
 
-First of all clone the project containing the prebuilt rust server.
+Docker is important from a Devops perspective as it allows multiple applications and processes to share resources to make better use of the infrastructure yet keep them running seperatly retaining the security one would have using two seperate system. 
 
-`git clone git@github.com:joloev/DD2482-executable-tutorial.git`{{execute}}
-<br/><br/>
+Docker also provide an image-based deployment model making it easier to share an application or service across multiple environments.
+
+Furthermore, Docker automates deployment of the application within the container environment. 
+
+More information can be found at [Docker's website](https://www.docker.com/)
 
 
-## Overview of Rust server
-Before getting started we will briefly introduce how the rust server works. Click on the IDE tab right next to the terminal tab. Go to server_devops/src/main.rs.
+## Rust server
+Complete code for the rust server set up in this tutorial can be found at this [github repo](https://github.com/joloev/DD2482-executable-tutorial).
 
-<!-- TO DO: exlpain the main function and handle_connection-->
-The main function ... 
-
-The function handle_connection ...
-
-For more information on rust specifics visit 
-https://doc.rust-lang.org/book/
+## Intended learning outcomes
+- Learn how to set up a Docker container and a few basic Docker commands neccessary
+- Learn how to deploy a rust server in using the Docker container
+- Making that server accessible from another machine
 
 

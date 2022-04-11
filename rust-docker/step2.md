@@ -1,31 +1,26 @@
-# Set up Docker image
+# Download the rust server
 
-## What is a Docker image?
-Now when we have a brief understanding of the rust server itself and the code used for it is time to start building the Docker container. Docker is an image based tool. This means one can create a sort of template for how a Docker container should look like. This teplate can then be reused when initialising new docker container. 
+A Rust server has been created beforehand, as this tutorial won't cover how to build the server itself.
+In order to make it run inside the Docker container we need to retrieve it.
+<br/><br/>
 
-If you are familiar with object oriented programming you can compare Docker image being a class and a docker container an instance of a class.
+## Clone the server
 
-There are multiple predefined Docker images you can download from [Docker Hub](https://hub.docker.com/)
+First of all clone the project containing the prebuilt rust server.
 
-If you have installed Docker you can download the predifned Docker images in the terminal using the docker command, see example below.
+`git clone git@github.com:joloev/DD2482-executable-tutorial.git`{{execute}}
+<br/><br/>
 
-## Download a premade docker image
 
-In order to run the rust server inside the Docker container, we are about to set up, we need animage which allows us to run rust programs inside the Docker container. Luckily there is already a predefined we can download.
+## Overview of Rust server
+Before getting started we will briefly introduce how the rust server works. Click on the IDE tab right next to the terminal tab. Go to server_devops/src/main.rs.
 
-Run `docker pull rust`{{execute}}
-This may take a a few minutes.
+<!-- TO DO: exlpain the main function and handle_connection-->
+The main function ... 
 
-Check that the image has been succesfully downloaded by running 
-`docker images`{{execute}}
-This command will list all local images.
+The function handle_connection ...
 
-You should now see the following information in the terminal:
+For more information on rust specifics visit 
+https://doc.rust-lang.org/book/
 
-```console
-REPOSITORY               TAG       IMAGE ID       CREATED             SIZE
-rust                     latest    5593c6ce4c4e   <time>             1.3GB
 
-```
-
-To remove an image run `docker image rm [image name or image id]`
