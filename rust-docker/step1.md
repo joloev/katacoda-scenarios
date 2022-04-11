@@ -1,21 +1,26 @@
 # Step 1
 
-We created a Rust server for this tutorial.
-
-## Overview of Rust server
-
+A Rust server has been created beforehand, as this tutorial won't cover how to build the server itself.
+In order to make it run inside the Docker container we need to retrieve it.
+<br/><br/>
 
 ## Clone the server
 
+First of all clone the project containing the prebuilt rust server.
+
 `git clone git@github.com:joloev/DD2482-executable-tutorial.git`{{execute}}
+<br/><br/>
 
-DÄR TYCKER JAG VI BORDE KLONA EN BRANCH EFTERSOM VI REDAN HAR EN Dockerfile
 
+## Overview of Rust server
+Before getting started we will briefly introduce how the rust server works. Click on the IDE tab right next to the terminal tab. Go to server_devops/src/main.rs.
 
-DÄR KAN MAN FÖRKLARA MER OM THE RUST SERVER
+<!-- TO DO: exlpain the main function and handle_connection-->
+The main function ... 
 
-You can later add your own Easter egg.
+The function handle_connection ...
 
-Sources: https://doc.rust-lang.org/book/
+For more information on rust specifics visit 
+https://doc.rust-lang.org/book/
 
 
