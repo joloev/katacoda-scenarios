@@ -1,6 +1,6 @@
 # Set up Docker container running a rust server
 
-In this tutorial, you will learn some basics about docker, how to containerize a rust server and how to access it from another machine, when containerized.
+In this tutorial, you will learn some basics about docker, how to containirize a rust server and how to access it from another machine, when containerized.
 
 Structure of the tutorial:
 - Docker: what it is and why it is important for devops.
