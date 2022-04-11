@@ -1,4 +1,4 @@
-# Step 2: Set up Docker image
+# Set up Docker image
 
 ## What is a Docker image?
 Now when we have a brief understanding of the rust server itself and the code used for it is time to start building the Docker container. Docker is an image based tool. This means one can create a sort of template for how a Docker container should look like. This teplate can then be reused when initialising new docker container. 
