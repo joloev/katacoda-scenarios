@@ -4,7 +4,7 @@ Now lets build the customized image:
 
 `docker build . -t rusty-server`{{execute}}
 
-What happens is a new image, based on Dockerfile created we be built.
+What happens is a new image, based on Dockerfile created will be built.
 
 `-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
 
