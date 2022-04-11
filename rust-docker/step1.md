@@ -1,6 +1,6 @@
 
 # What is Docker?
-*If you are already familiar with Docker you may skip this step*
+*If you are already familiar with Docker you may skip this step.*
 
 Docker is an open source software which allows for  applications to be build and deployed in isolated environments anywhere. It is the many features of a linux kernel Docker exploits like *namespaces* and *control groups*.
 
