@@ -4,18 +4,19 @@ Now lets build the customized image:
 
 `docker build . -t rusty-server`{{execute}}
 
-What happens is a new image, based on Dockerfile created will be built.
+What happens is a new image, based on the Dockerfile will be built.
 
-`-t` = tag, it allows us to tag the Docker image. If not, it will be tagged `<none> `.
+`-t` = tag, it allows us to name the Docker image. If not, it will be named `<none> `.
 
 Check if the image has been created by running `docker images`{{execute}}. Do you see it?
 
-Now create a container based by running the customized docker image.
+Now run a cotainer based on the customized docker image we built.
 
 `docker run -d -it --rm --name rusty-server1 rusty-server`{{execute}}
 
-`-d` detached mode, it will free your terminal after use. Like `&` in the background.
-`-it` Interractive mode
+`-d` also named `--detach` It will free your terminal after use and continue running it in the background, like the linux command `&`.
+`-it` are to sepeate commands telling it should be in an interactive mode. `-i` means the command inside the container will be connected to the STDIN of the docker run itself and `-t` ensure the main process inside docker input is a terminal device.
+`--rm` automatically removes the container when it exits
 `--name` the syntax is : `--name <Container name> <Image>`
 
 Run `docker ps -a`{{execute}} to see that the container is up and running.
