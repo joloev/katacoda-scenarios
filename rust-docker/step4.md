@@ -21,7 +21,7 @@ Add the following in the file:
 `EXPOSE 7878`{{execute}}
 
 
-Each line of the Dockerfile is described below.
+Each line of the Dockerfile creates a new read-only layer in the docker image. Let's go through them one by one.
 
 `FROM`, aka the Docker image. This is the parent or base image which our customized image will be built upon.
 A note on **rust:latest**: You usually don't want to use the tag *latest*, but Rust is backward compatible.
