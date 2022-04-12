@@ -21,12 +21,13 @@ Now creating a container by running the customized docker image we built.
 
 - `-d` also named `--detach` It will free your terminal after use and continue running it in the background, like the linux command `&`.
 
-- `-it` are to sepeate commands telling it should be in an interactive mode. `-i` means the command inside the container will be connected to the STDIN of the docker run itself and `-t` ensures the input of main process, inside docker is a terminal device.
+- `-it` are to seperate commands telling it should be in an interactive mode. `-i` means the command inside the container will be connected to the STDIN of the docker run itself and `-t` ensures the input of main process, inside docker is a terminal device.
 
 - `--rm` automatically removes the container when it exits
 
 - `--name` the syntax is : `--name <Container name> <Image>`
 
-Run `docker ps -a`{{execute}} to see that the container is up and running.
+Run `docker ps -a`{{execute}} to list all the container running.
+
 
 
