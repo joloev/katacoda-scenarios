@@ -1,37 +1,33 @@
-# Fix the Rust server to listen to the world
-## A second try
+# Bonus
 
-The Rust server is listening on localhost. But the localhost of the Container is not your localhost.
+Choose your own easter bunny
 
-What is happening is something like this the Rust server is on `127.0.0.1`, that is the container *own local host*. It is unreachable. Så bra med isolated environments.
+- Choose an image on google
 
-We are listening at an address that does not exist.
+- Go to https://base64.guru/converter/encode/image and convert you image into ASCII
 
-To fix this, go to the Rust code and make the server listen on all possible connections with ` TcpListener::bind("0.0.0.0:7878")`.
 
-`nano src/main.rs`{{execute}}
+- Go to folder `cd DD2482-executable-tutorial/server_devops/`{{execute}}
+- Open the code in a text editor like `vim hello.html`{{execute}}
+- Type `i`{{execute}} to enter insert mode and change the following line add the your own `<ID of the image>` you picked and converted.
 
-and change the line:
-
-```git
--let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-+let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
+```html 
+<img src="data:image/png;base64, <ID of the image> =="/>
 ```
+- To save the file press `esc` to escape the insert mode and `:wq`{{execute}} to save the changes.
 
-Save the file (???)
-The server will now listen to any computer, on port 7878.
+<br/><br/>
+Rebuild the Rust server to display your own image by following the same instructions as in step 6:
 
-Rebuild the file as per step# (link?)
+- Make sure the old server is not running, use `docker stop rusty-server1`{{execute}} to be sure you may also check what containers are running using `docker ps -a`{{execute}}
+
+- Rebuild the docker image with the latest changes.
 `docker build . -t rusty-server`{{execute}}
 
-Run the file as per step 4. 
+- Run the docker image to create a new container instance.
 `docker run -d -it -p 7777:7878 --rm --name rusty-server1 rusty-server`{{execute}}
 
-If the old server is running, use `docker stop <Container name>`
+Finally, go to `https://2887145477-7777-elsy04.environments.katacoda.com/` and you should see your own image.
 
-
-Go to `localhost:7777` and you should see:
-
-![](./assets/easter_bunny.png)
 
 

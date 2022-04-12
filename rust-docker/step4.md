@@ -20,6 +20,7 @@ Add the following in the file:
 
 `EXPOSE 7878`{{execute}}
 
+To save the file press `esc` to escape the insert mode and `:wq`{{execute}} to save the changes.
 
 Each line of the Dockerfile creates a new read-only layer in the docker image. Let's go through them one by one.
 
