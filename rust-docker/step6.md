@@ -69,7 +69,7 @@ Run the docker image to create a new container instance.
 `docker run -d -it -p 7777:7878 --rm --name rusty-server1 rusty-server`{{execute}}
 
 
-Go to `https://2887145477-7777-elsy04.environments.katacoda.com/` and you should see:
+Go to `https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/` and you should see:
 
 ![](./assets/easter_bunny.png)
 
