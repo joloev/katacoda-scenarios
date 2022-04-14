@@ -10,7 +10,8 @@ If you run `docker ps -a`{{execute}}, the container should have been removed, th
 
 Remember `7878` is the port we chose for the Rust server to listen to in the main function, as you can see in the code snippet below.
 
-```rust fn main() {
+```rust 
+fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
 
     for stream in listener.incoming() {

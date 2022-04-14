@@ -5,16 +5,18 @@
 Docker is an open source software which allows for  applications to be build and deployed in isolated environments anywhere. It is the many features of a linux kernel Docker exploits like *namespaces* and *control groups*.
 
 ![](./assets/docker_overview.png)
+Source: [Linux Teachings](https://sv.linuxteaching.com/article/how_to_build_docker_images_with_dockerfile)
 
 Dockerizing a project means one creates a Dockerfile in the root folder of a project. A Dockerfile is a text file which contains commands to assemble a docker image. A docker image is a snapshot of the current environment which is stored and can be shared with other for them to open the exact same enviornment on the same or another host. Many commonly used images can be found and retrieved from [Docker Hub](https://hub.docker.com/). 
 
 A Docker container is an instance of an image. The container is in fact a self contained process meaning it has its own memory space and file system completely isolated from other containers or with the underlying system. A Docker container can be modified during runtime. However, in order for the changes to be saved a new image with the changes must be built, also refered to as commiting changes to a docker image.
 
 ![](./assets/container_commit_image.png)
-
+Source: [Dev.to](https://dev.to/cloudx/docker-commit-converting-a-container-into-an-image-i1p)
 <br/><br/>
 ## Docker versus VMs
 ![](./assets/docker_vs_vm.png)
+Source: [docker.com](https://www.docker.com/resources/what-container/)
 
 Docker is usually compared with virtual machines (VMs).
 However, unlike virtual machines the containers do not carry payload of an entire OS instance and hypervisor. They include only the necessary OS processes and dependencies necessary to execute the container code. In more specific terms it virtualises only the application layer, not the entire OS layer. 
