@@ -3,7 +3,7 @@
 A Rust server has been created beforehand, as this tutorial won't cover how to build the server itself. In order to make it run inside the Docker container we need to clone it from Github.
 <br/><br/>
 
-Run `git clone git@github.com:joloev/DD2482-executable-tutorial.git`{{execute}} to get a local copy of the rust server.
+Run `git clone https://github.com/joloev/DD2482-executable-tutorial.git`{{execute}} to get a local copy of the rust server.
 
 
 ## Overview of Rust server
