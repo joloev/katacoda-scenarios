@@ -4,7 +4,7 @@
 
 Now lets build the customized image:
 
-`docker build . -t rusty-server`{{execute}}
+`docker build -t rusty-server .`{{execute}}
 
 What happens is a new image, based on the Dockerfile will be built.
 

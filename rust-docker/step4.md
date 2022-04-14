@@ -27,7 +27,7 @@ Each line of the Dockerfile creates a new read-only layer in the docker image. L
 `FROM`, aka the Docker image. This is the parent or base image which our customized image will be built upon.
 A note on **rust:latest**: You usually don't want to use the tag *latest*, but Rust is backward compatible.
 
-`WORKDIR` is NOT necessary. The system assumes that we are in the current folder.  This sets the working directory for the image where the following commands like RUN, CMD, etc.. will be executed.
+`WORKDIR` is (as per the official Docker Hub Rust image documentation is) NOT necessary. The system assumes that we are in the current folder.  This sets the working directory for the image where the following commands like RUN, CMD, etc.. will be executed.
 
 `RUN` cargo install --path ., as per the Docker hub documentation
 
