@@ -1,1 +1,0 @@
-git clone https://github.com/joloev/DD2482-executable-tutorial.git

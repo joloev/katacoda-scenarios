@@ -35,15 +35,14 @@
       }
     ],
     "intro": {
-      "text": "intro.md",
-      "courseData": "cloneProject.sh"
+      "text": "intro.md"
     },
     "finish": {
       "text": "finish.md"
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
   },
   "backend": {
