@@ -42,8 +42,8 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
+    "uilayout": "vscode-terminal-split",
+    "uimessage1": "\u001b[32mYour Interactive Easter Bash Terminal.\r\n"
   },
   "backend": {
     "imageid": "ubuntu:2004"
