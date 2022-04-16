@@ -17,11 +17,9 @@ Check if the image has been created by running `docker images`{{execute}}. Do yo
 
 Now creating a container by running the customized docker image we built.
 
-- `docker run -d -it --rm --name rusty-server1 rusty-server`{{execute}}
+`docker run -d --rm --name rusty-server1 rusty-server`{{execute}}
 
 - `-d` also named `--detach` It will free your terminal after use and continue running it in the background, like the linux command `&`.
-
-- `-it` are to seperate commands telling it should be in an interactive mode. `-i` means the command inside the container will be connected to the STDIN of the docker run itself and `-t` ensures the input of main process, inside docker is a terminal device.
 
 - `--rm` automatically removes the container when it exits
 

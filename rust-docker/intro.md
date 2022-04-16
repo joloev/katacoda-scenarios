@@ -9,6 +9,7 @@ Structure of the tutorial:
 - Build your own image
 - Run a container
 - Make the server accessible from other servers
+- Make a `docker-compose` file and play with environmental variables.
 
 ## Rust server code
 Complete code for the rust server set up in this tutorial can be found at this [github repo](https://github.com/joloev/DD2482-executable-tutorial).
