@@ -6,4 +6,4 @@ REWRITE: In this tutorial the entire application consists of a server. However, 
 
 To get started with docker-compose we recommend you read the following [documentation](https://docs.docker.com/compose/)
 
-+ If you want to make more servers in Rust, we recommend [Actix](https://actix.rs/). They [examples](https://github.com/actix/examples) repo has everything to get you started.
+If you want to make more servers in Rust, we recommend [Actix](https://actix.rs/). They [examples](https://github.com/actix/examples) repo has everything to get you started.
