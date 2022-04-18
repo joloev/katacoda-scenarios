@@ -7,14 +7,21 @@ Run `git clone https://github.com/joloev/DD2482-executable-tutorial.git`{{execut
 
 
 ## Overview of Rust server
-Before getting started we will briefly introduce how the rust server works. Click on the IDE tab right next to the terminal tab. Go to server_devops/src/main.rs.
+Before getting started we will briefly introduce how the rust server works. 
 
 <!-- TO DO: exlpain the main function and handle_connection-->
-The main function ... 
+The main function will listen to incoming connections on localhost:
 
-The function handle_connection ...
+```rust
+listener = TcpListener::bind("127.0.0.1:7878");
+```
 
-For more information on rust specifics visit 
+In case of success, function `handle_connection` will return a simple `html` page that you can see in your webbrowser.
+
+This is the simplest example possible. As you may know, most people using a server do not write those from scratch, and we will put some links if you are interested into writing Rust servers in our conclusions!
+
+This code is available[here](https://github.com/joloev/DD2482-executable-tutorial).
+For more information on Rust specifics visit 
 https://doc.rust-lang.org/book/
 
 

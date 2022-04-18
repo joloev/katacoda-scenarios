@@ -1,33 +1,43 @@
-# Bonus
+# Making a Docker compose file
 
-Choose your own easter bunny
+## Docker compose
 
-- Choose an image on google
+Some people will say you need several services to use a `docker-compose`. Don't listen to that.
 
-- Go to https://base64.guru/converter/encode/image and convert you image into ASCII
+Wouldn't it be nice to run docker with all ports already configured? Isn't it annoying to run `docker run ...` and have to get the ports right and everything?"Let's write all into a docker-compose file so you can run `docker-compose up -d` and everything starts working; with the image already being built on-demand if needed.
 
+MAKE THAT
 
-- Go to folder `cd DD2482-executable-tutorial/server_devops/`{{execute}}
-- Open the code in a text editor like `vim hello.html`{{execute}}
-- Type `i`{{execute}} to enter insert mode and change the following line add the your own `<ID of the image>` you picked and converted.
+touch docker-compose.yml
 
-```html 
-<img src="data:image/png;base64, <ID of the image> =="/>
 ```
-- To save the file press `esc` to escape the insert mode and `:wq`{{execute}} to save the changes.
+services:
+    rusty:
+        container_name: rusty-server1
+        image: rusty-server
+        ports:
+            - "7777:7878"
+        tty: true
+```
 
-<br/><br/>
-Rebuild the Rust server to display your own image by following the same instructions as in step 6:
+## Environment variables in the docker compose
 
-- Make sure the old server is not running, use `docker stop rusty-server1`{{execute}} to be sure you may also check what containers are running using `docker ps -a`{{execute}}
+One big DevOps concept though is configuring through environment variables rather than hard coding things. So you could set the port number and hosting address via environment variables and then set those up with docker-compose if you wanted.
 
-- Rebuild the docker image with the latest changes.
-`docker build . -t rusty-server`{{execute}}
+```
+services:
+    rusty:
+        container_name: ${NAME}
+        image: rusty-server
+        ports:
+            - "7777:7878"
+        tty: true
+```
 
-- Run the docker image to create a new container instance.
-`docker run -d -it -p 7777:7878 --rm --name rusty-server1 rusty-server`{{execute}}
+You can now run
 
-Finally, go to `https://2887145477-7777-elsy04.environments.katacoda.com/` and you should see your own image.
+```
+NAME=<your chosen name> docker-compose up
+```
 
-
-
+See with `docker ps -a`
