@@ -70,6 +70,6 @@ Run the docker image to create a new container instance.
 
 Go to `https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/` and you should see the following:
 
-![](./assets/easter_bunny.png)
+![](./assets/easter_bunny_2.png)
 
 
