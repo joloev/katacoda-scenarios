@@ -42,7 +42,7 @@ As the code snippet above shows the Rust server is listening on localhost. `127.
 We are listening at an address that is not accessible.
 
 Lets fix this!
-- Go to folder `cd DD2482-executable-tutorial/server_devops/src/`{{execute}}
+- Go to folder `cd /root/DD2482-executable-tutorial/server_devops/src/`{{execute}}
 - Open the code in a text editor like `vim main.rs`{{execute}}
 - Type `i`{{execute}} to enter insert mode and change the following line:
 
@@ -61,13 +61,14 @@ The server will now listen to any incoming request, on port 7878.
 Make sure the old server is not running, use `docker stop rusty-server1`{{execute}} to be sure you may also check what containers are running using `docker ps -a`{{execute}}
 
 Now we have to rebuild the docker image to the latest changes.
+First go back to root folder `cd /root/DD2482-executable-tutorial/server_devops/`{{execute}} and then run
 `docker build . -t rusty-server`{{execute}}
 
 Run the docker image to create a new container instance.
 `docker run -d -p 7777:7878 --rm --name rusty-server1 rusty-server`{{execute}}
 
 
-Go to `https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/` and you should see:
+Go to `https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/` and you should see the following:
 
 ![](./assets/easter_bunny.png)
 
