@@ -14,11 +14,7 @@ Remember `7878` is the port we chose for the Rust server to listen to in the mai
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
 
-    for stream in listener.incoming() {
-        let stream = stream.unwrap();
-
-        handle_connection(stream);
-    }
+    // Code to handle connections ...
 }
 ```
 
@@ -28,7 +24,7 @@ Now lets re-run the image but this time exposing the port. Lets choose port `777
 
 Now requests to 7777 will be redirected to 7878.
 
-`docker ps -a` will show you the following:
+`docker ps -a`{{execute}} will show you the following:
 
 ```console
 CONTAINER ID   IMAGE     COMMAND           CREATED          STATUS          PORTS                                       NAMES
