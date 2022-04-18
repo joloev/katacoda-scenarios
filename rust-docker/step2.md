@@ -18,10 +18,10 @@ listener = TcpListener::bind("127.0.0.1:7878");
 
 In case of success, function `handle_connection` will return a simple `html` page that you can see in your webbrowser.
 
-This is the simplest example possible. As you may know, most people using a server do not write those from scratch, and we will put some links if you are interested into writing Rust servers in our conclusions!
+This is the simplest example possible. As you may know, most people using a server do not write those from scratch, and we will put some links if you are interested into writing Rust servers in our conclusions.
 
-This code is available[here](https://github.com/joloev/DD2482-executable-tutorial).
-For more information on Rust specifics visit 
+This code is available [here](https://github.com/joloev/DD2482-executable-tutorial).
+For more information on Rust visit 
 https://doc.rust-lang.org/book/
 
 

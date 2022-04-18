@@ -34,7 +34,7 @@ Each line of the Dockerfile creates a new read-only layer in the docker image. L
 
 A note on **rust:latest**: You usually don't want to use the tag *latest*, but one of the strengths of Rust is to backward compatible. You are not stuck to with a specific version, aka, no breaking changes!
 
-`WORKDIR` (as per the official [Docker Hub Rust](https://hub.docker.com/_/rust)  documentation) **is NOT** necessary. The system assumes that we are in the current folder and sets it the working directory. The following commands like `RUN`, `CMD`, etc. will be executed here.
+`WORKDIR` (as per the official [Docker Hub Rust](https://hub.docker.com/_/rust)  documentation) **is NOT** necessary. The system assumes that we are in the current folder and sets it as the working directory. The following commands like `RUN`, `CMD`, etc. will be executed here.
 
 `RUN` cargo install --path ., as per the Docker hub documentation. This will make an executable file called `server_devops`. If you are unfamiliar with Rust, the name of the executable file is the same as the name of the package. You can find this information in the `Cargo.toml` file.
 
@@ -43,7 +43,7 @@ A note on **rust:latest**: You usually don't want to use the tag *latest*, but o
 name = "server_devops"
 ```
 
-`CMD` ["server_devops"]: specifies that the command server_devops should be executed when running a container. 
+`CMD` ["server_devops"]: specifies that the command server_devops should be executed when running a container. This will call the executable. 
 
 `EXPOSE 7878`: means server will listen on port `7878`.
 

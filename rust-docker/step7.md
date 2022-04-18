@@ -2,9 +2,11 @@
 
 ## Docker compose
 
-Some people will say you need several services to use a `docker-compose`. Don't listen to that.
+Some people will say you need several services to use a `docker-compose`. Don't listen to them :).
 
-Wouldn't it be nice to run docker with all ports already configured? Isn't it annoying to run `docker run ...` and have to get the ports right and everything?"Let's write all into a docker-compose file so you can run `docker-compose up -d` and everything starts working; with the image already being built on-demand if needed.
+Wouldn't it be nice to run docker with all ports already configured? Isn't it annoying to run `docker run ...` and have to get the ports right every time?
+
+Let's write all into a docker-compose file so we can run `docker-compose up` (with or without detached `-d` flag) and everything starts working; with the image already being built on-demand if needed.
 
 MAKE THAT
 
